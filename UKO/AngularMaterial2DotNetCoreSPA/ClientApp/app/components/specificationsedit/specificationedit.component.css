@@ -1,0 +1,42 @@
+﻿.container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-start;
+    
+}
+.flex-item {
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    margin-left: 1em;
+    line-height: 3px;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    
+}
+
+.mat-list-option {
+    
+    float:left;
+}
+.longfield {
+    width: 35%;
+    height: 100%;
+}
+
+.comment {
+    width: 35%;
+    height: 10rem;
+}
+
+

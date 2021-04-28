@@ -1,0 +1,48 @@
+﻿.container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+   
+    flex-direction:column;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.flex-item {
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.button-container {
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+}
+button{
+    margin:10px 5px;
+    width:165px;
+    height:30px;
+}
+
+.row {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 35%;
+    padding: 1rem;
+}
+
+column3 {
+    float: left;
+    width: 20%;
+    padding: 1rem;
+}

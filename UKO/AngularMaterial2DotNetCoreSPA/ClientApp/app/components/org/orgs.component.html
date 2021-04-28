@@ -1,0 +1,81 @@
+﻿<div class="container">
+    <div class="flex-item">
+        <h3>УКО юридическое лицо</h3>
+    </div>
+    <div class="flex-item">
+        <div class="row">
+            <div class="column">
+                <div style="float:left">
+                    <button mat-raised-button color="primary" (click)="goToPage('1')">Документы УКО</button>
+                </div>
+                <div style="float:left;margin-left:20rem">
+
+                </div>
+                
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="Название" [(ngModel)]="newuko.name" name="name">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="Юридическое название" [(ngModel)]="newuko.jurname" name="jurname">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                          
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="ИНН" [(ngModel)]="newuko.inn" name="inn">
+                            </mat-form-field>
+                        </td>
+                        <td colspan="2">
+                            <mat-form-field>
+                                <input matInput placeholder="Комментарий" [(ngModel)]="newuko.comment" name="comment">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item">
+        <div class="row">
+            <div class="column">
+                <div>
+                    <button mat-raised-button color="primary" (click)="goToPage('0')">Cписок адресов УКО</button>
+                </div>
+            </div>
+
+            <div class="column">
+              
+            </div>
+
+        </div>
+       
+    </div>
+
+    <div class="flex-item">
+        <div class="row">
+            <div class="colum">
+                <div style="float:left">
+                    
+                </div>
+                <div style="float:left;margin-left:60rem">
+
+                </div>
+            </div>
+            <div class="column2">
+                <button mat-raised-button color="primary" (click)="add(newuko)">Сохранить</button>
+            </div>
+        </div>
+    </div>
+ </div>

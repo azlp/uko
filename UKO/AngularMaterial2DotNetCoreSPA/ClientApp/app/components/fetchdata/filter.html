@@ -1,0 +1,15 @@
+﻿<h1 mat-dialog-title>Фильтр</h1>
+<div mat-dialog-content>
+    Выберите фильтр чтобы увидеть нужные вам ресурсы:
+    <ul>
+        <li>
+            <span *ngIf="data.filters === 'rezerv'">&#10003;</span> Резерв/Бронь
+        </li>
+        <li>
+            <span *ngIf="data.filters === 'free'">&#10003;</span> Свободные ресурсы
+        </li>
+        <li>
+            <span *ngIf="data.filters === 'problem'">&#10003;</span> Нехватка ресурсов
+        </li>
+    </ul>
+</div>

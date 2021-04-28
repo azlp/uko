@@ -1,0 +1,85 @@
+﻿<h2 mat-dialog-title>Адрес</h2>
+<mat-dialog-content class="mat-typography">
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <input matInput placeholder="Почтовый индекс" [(ngModel)]="newadress.index" name="index">
+                    </mat-form-field>
+                </td>
+
+                <td style="margin-left:1rem">
+                    <mat-form-field>
+                        <input matInput placeholder="Город" [(ngModel)]="newadress.city" name="city">
+                    </mat-form-field>
+                </td>
+                <td style="margin-left:1rem">
+                    <mat-form-field>
+                        <input matInput placeholder="Улица" [(ngModel)]="newadress.street" name="street">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td style="margin-left:1rem">
+                    <mat-form-field>
+                        <input matInput placeholder="Дом Номер" [(ngModel)]="newadress.housenumber" name="housenumber">
+                    </mat-form-field>
+                </td>
+                <td style="margin-left:1rem">
+                    <mat-form-field>
+                        <input matInput placeholder="Корпус" [(ngModel)]="newadress.block" name="block">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <input matInput placeholder="Строение" [(ngModel)]="newadress.blockcode" name="blockcode">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <input matInput placeholder="Подъезд" [(ngModel)]="newadress.entrance" name="entrance">
+                    </mat-form-field>
+                </td>
+                <td style="margin-left:1rem">
+                    <mat-form-field>
+                        <input matInput placeholder="Этаж" [(ngModel)]="newadress.floor" name="floor">
+                    </mat-form-field>
+                </td>
+                <td style="margin-left:1rem">
+                    <mat-form-field style="margin-left:0,5rem">
+                        <input matInput placeholder="Квартира" [(ngModel)]="newadress.flat" name="flat">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="row">
+                        <div style="float:left;padding-left:0.5rem">
+                            <mat-checkbox (change)="set('Зарегистрирован')">Зарегистрирован</mat-checkbox>
+
+                        </div>
+
+                        <div style="float:left;padding-left:0.5rem">
+                            <mat-checkbox (change)="set('Проживает')">Проживает</mat-checkbox>
+                        </div>
+                        <div style="float:left;padding-left:0.5rem">
+                            <mat-checkbox (change)="set('Прописан')">Прописан</mat-checkbox>
+                        </div>
+                        <div style="float:left;padding-left:0.5rem">
+                            <mat-checkbox  (change)="set('Юридический адрес')">Юридический адрес</mat-checkbox>
+                        </div>
+                        <div style="float:left;padding-left:0.5rem">
+                            <mat-checkbox (change)="set('Склад')">Склад</mat-checkbox>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+           
+        </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Закрыть</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addAdress(newadress)" >Добавить</button>
+</mat-dialog-actions>

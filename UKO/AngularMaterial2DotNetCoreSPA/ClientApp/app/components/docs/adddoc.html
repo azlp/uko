@@ -1,0 +1,168 @@
+﻿<div [ngSwitch]="typeoffdoc">
+    <div *ngSwitchCase="'паспорт'"  mat-dialog-content aria-label="Добавить паспорт" class="dialog-picture">
+        <h1 mat-dialog-title>Добавить</h1>
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Название документа" [(ngModel)]="newdocs.docname" name="docname">
+            </mat-form-field>
+
+        </div>
+        <div>
+            <ng-container>
+                <img id="docimage" style="max-width:10em;max-height:10em" [src]="url" alt="фотографии нет">
+
+
+                <input type="file" (change)="fileChange($event)" name="file" style="resize:both" />
+
+            </ng-container>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Номер серия" [(ngModel)]="newdocs.docnumber" name="docnumber">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Дата выдачи" [(ngModel)]="newdocs.docissuedate" name="docissuedate">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Выдавшая организация" [(ngModel)]="newdocs.issueorg" name="issueorg">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Код подразделения" [(ngModel)]="newdocs.issueorgcode" name="issueorgcode">
+            </mat-form-field>
+
+        </div>
+
+    </div>
+    <div *ngSwitchCase="'регистрация'" mat-dialog-content aria-label="Добавить регистрацию" class="dialog-picture">
+        <h1 mat-dialog-title>Добавить</h1>
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Название документа" [(ngModel)]="newdocs.docname" name="docname">
+            </mat-form-field>
+
+        </div>
+        <div>
+            <ng-container>
+                <img id="docimage" style="max-width:10em;max-height:10em" [src]="url" alt="фотографии нет">
+
+
+                <input type="file" (change)="fileChange($event)" name="file" style="resize:both" />
+
+            </ng-container>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Номер" [(ngModel)]="newdocs.docnumber" name="docnumber">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Номер решения" [(ngModel)]="newdocs.docser" name="docser">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Дата решения" [(ngModel)]="newdocs.dateofresolution" name="dateofresolution">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Дата выдачи" [(ngModel)]="newdocs.docissuedate" name="docissuedate">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Действительно до" [(ngModel)]="newdocs.docenddate" name="docenddate">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Выдавшая организация" [(ngModel)]="newdocs.issueorg" name="issueorg">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Гражданство" [(ngModel)]="newdocs.holdersitezenship" name="holdersitezenship">
+            </mat-form-field>
+        </div>
+    </div>
+    <div *ngSwitchCase="'разрешение на работу'" mat-dialog-content aria-label="Добавить разрешение на работу" class="dialog-picture">
+        <h1 mat-dialog-title>Добавить</h1>
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Название документа" [(ngModel)]="newdocs.docname" name="docname">
+            </mat-form-field>
+
+        </div>
+        <div>
+            <ng-container>
+                <img id="docimage" style="max-width:10em;max-height:10em" [src]="url" alt="фотографии нет">
+
+
+                <input type="file" (change)="fileChange($event)" name="file" style="resize:both" />
+
+            </ng-container>
+        </div>
+        <div>
+
+            <mat-form-field>
+                <input matInput placeholder="Номер документа" [(ngModel)]="newdocs.docnumber" name="docnumber">
+            </mat-form-field>
+
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Действительно до" [(ngModel)]="newdocs.docenddate" name="docenddate">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Вид деятельности" [(ngModel)]="newdocs.typeoffwork" name="typeoffwork">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Кем выдано" [(ngModel)]="newdocs.issueorg" name="issueorg">
+            </mat-form-field>
+
+        </div>
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Когда выдано" [(ngModel)]="newdocs.docissuedate" name="docissuedate">
+            </mat-form-field>
+
+        </div>
+    </div>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Закрыть</button>
+    <button mat-button [mat-dialog-close]="true" (click)="addDoc(newdocs)" cdkFocusInitial >Добавить</button>
+</mat-dialog-actions>

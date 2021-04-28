@@ -1,0 +1,94 @@
+﻿<div class="container">
+    <div class="flex-item">
+        <h3>Редактировать нестандартную спецификацию ресурса</h3>
+    </div>
+    <div class="flex-item">
+        <mat-form-field class="longfield">
+            <input matInput placeholder="Инвентаризационный номер" [(ngModel)]="newresourse.number" name="number">
+        </mat-form-field>
+       
+       
+    </div>
+
+    <div class="flex-item">
+        <mat-form-field class="longfield">
+            <textarea matInput placeholder="Название ресурса" [(ngModel)]="newresourse.name" name="name"></textarea>
+        </mat-form-field>
+        <mat-form-field class="longfield">
+            <textarea matInput placeholder="Жаргонное название" [(ngModel)]="newresourse.argo" name="argo"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-item">
+        <mat-form-field class="longfield">
+            <input matInput placeholder="Производитель" [(ngModel)]="newresourse.developer" name="developer">
+        </mat-form-field>
+    </div>
+    <div class="flex-item">
+        <mat-form-field>
+            <input matInput placeholder="Единицы измерения" [(ngModel)]="newresourse.units" name="units">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Вес" [(ngModel)]="newresourse.weight" name="weight">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Длина" [(ngModel)]="newresourse.lenght" name="lenght">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ширина" [(ngModel)]="newresourse.with" name="with">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Высота" [(ngModel)]="newresourse.height" name="height">
+        </mat-form-field>
+    </div>
+        <div class="flex-item">
+            <mat-form-field>
+                <input matInput placeholder="Цвет" [(ngModel)]="newresourse.colorlistoffresourse" name="colorlistoffresourse">
+                <input [(colorPicker)]="color" [style.background]="color" (colorPickerChange)="cmykColor=onChangeColor($event);color=$event" />
+            </mat-form-field>
+           
+                <mat-selection-list #list (ngModelChange)="removeColor($event)">
+
+                    <mat-list-option *ngFor="let color of colors" [selected]="color.selected"
+                                     (click)="removeColor(color)">
+
+                        <div class="color" [ngStyle]="{ 'background-color': color, 'width': '15px', 'height': '15px'}"></div>
+
+                    </mat-list-option>
+
+
+                </mat-selection-list>
+                
+</div>
+
+   
+    <div class="flex-item">
+        <mat-form-field class="longfield">
+            <textarea  matInput placeholder="Наличие дефектов" [(ngModel)]="newresourse.deffects" name="deffects"></textarea>
+        </mat-form-field>
+       
+    </div>
+        <div class="flex-item">
+
+                     <img id="sourseimg" style="max-width:10em;max-height:10em"  [src]="domSanitizer.bypassSecurityTrustUrl(url)" alt="фотография ресурса">
+                
+                        <input type="file" (change)="fileChange($event)" name="file" />
+
+
+            </div>
+
+      <div class="flex-item">
+
+          <mat-form-field class="longfield">
+              <textarea matInput placeholder="Текстовый комментарий" [(ngModel)]="newresourse.comment" name="comment"></textarea>
+          </mat-form-field>
+
+      </div>
+
+        <div class="flex-item">
+            <button mat-raised-button color="primary" (click)="specification(newresourse)">Отредактировать спецификацию</button>
+        </div>       
+            
+        
+  
+ </div>

@@ -1,0 +1,81 @@
+﻿<div class="container">
+    <div class="flex-item">
+        <h3>УКО - физическое лицо</h3>
+    </div>
+    <div class="flex-item">
+        <div class="row">
+            <div class="column">
+                <img id="sourseimg" style="max-width:10em;max-height:10em" [src]="url" alt="фотографии нет">
+                <input type="file" (change)="fileChange($event)" name="file" style="display:" />
+            </div>
+            <div class="column">
+                <table>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="Фамилия" [(ngModel)]="newuko.familiname" name="familiname">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="Имя" [(ngModel)]="newuko.name" name="name">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field>
+                                <input matInput placeholder="Отчество" [(ngModel)]="newuko.secondname" name="secondname">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <mat-form-field>
+                                <input matInput placeholder="Прозвище" [(ngModel)]="newuko.nickname" name="nickname">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <mat-form-field>
+                              
+                                <input matInput [matDatepicker]="myDatepicker"  placeholder="Дата рожденья">
+                                <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #myDatepicker (selectedChanged)="setDate($event)"></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item">
+        <div class="row">
+            <div class="colum">
+                <div>
+                    <button mat-raised-button color="primary" (click)="goToPage('0')">Адрес УКО</button>
+                </div>
+                
+                <div style="margin-top:2rem">
+                    <button mat-raised-button color="primary" (click)="goToPage('1')">Документы УКО</button>
+                </div>
+                <div style="margin-top:2rem">
+                    <button mat-raised-button color="primary" (click)="goToPage('2')">Ресурсы УКО</button>
+                </div>
+            <div class="column">
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="flex-item">
+        <div class="row">
+            <div class="colum">
+                <button mat-raised-button color="primary" (click)="add(newuko)">Сохранить</button>
+            </div>
+            <div class="column2">
+
+            </div>
+        </div>
+    </div>
+ </div>

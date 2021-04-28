@@ -1,0 +1,20 @@
+﻿<div class="container">
+    <div class="flex-item">
+        <h3>Создать УКО</h3>
+    </div>
+    <div class="flex-item">
+        <div style="float:left">
+            <mat-checkbox (change)="set('0')">Физическое лицо</mat-checkbox>
+        </div>
+        <div style="float:left;margin-left:1em">
+            <mat-checkbox (change)="set('1')">Юридическое лицо</mat-checkbox>
+        </div>
+       
+    </div>
+
+    <div class="flex-item">
+       
+        <button mat-raised-button color="primary" (click)="add()">Создать УКО</button>
+        
+    </div>
+ </div>

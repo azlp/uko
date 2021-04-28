@@ -1,0 +1,28 @@
+﻿<h1 mat-dialog-title>Удалить ресурс</h1>
+<mat-dialog-content class="popup-element">
+    <div class="container">
+       
+           <div class="flex-item">
+               {{ resoursedelete.name }}
+           </div>
+            <div class="flex-item">
+                у УКО
+            </div>
+            <div class="flex-item">
+                {{ resoursedelete.ownername }}
+            </div>
+            <div class="flex-item">
+                ?
+            </div>
+            <div class="flex-item" hidden>
+                {{ resoursedelete.name }}
+            </div>
+            <div class="flex-item" hidden>
+                {{ resoursedelete.name }}
+            </div>
+        </div>
+ </mat-dialog-content>
+<mat-dialog-actions align="left">
+    <button mat-button mat-dialog-close (click)="deleteResourse($event)">Удалить</button>
+    <button mat-button mat-dialog-close>Закрыть</button>
+</mat-dialog-actions>
